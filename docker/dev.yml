@@ -1,0 +1,45 @@
+version: '3.7'
+services:
+  app1:
+    build:
+      context: ../mono-repo
+      dockerfile: DevDockerfile
+    container_name: app1
+    image: mono-repo/app1:dev
+    ports:
+      - 3001:3001
+    command: 'npm run start:service app1'
+    networks:
+      - mono-repo-net
+    volumes:
+      - ../mono-repo/apps:/app/apps
+
+  app2:
+    build:
+      context: ../mono-repo
+      dockerfile: DevDockerfile
+    container_name: app2
+    image: mono-repo/app2:dev
+    ports:
+      - 3002:3002
+    command:  'npm run start:service app2'
+    networks:
+      - mono-repo-net
+    volumes:
+      - ../mono-repo/apps:/app/apps
+
+  app3:
+    build:
+      context: ../mono-repo
+      dockerfile: DevDockerfile
+    container_name: app3
+    image: mono-repo/app3:dev
+    ports:
+      - 3003:3003
+    command:  'npm run start:service app3'
+    networks:
+      - mono-repo-net
+    volumes:
+      - ../mono-repo/apps:/app/apps
+networks:
+  mono-repo-net:
