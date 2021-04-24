@@ -3,7 +3,6 @@ FROM node:14
 RUN apt-get update
 
 RUN npm cache clean --force
-RUN apt-get install -y postgresql-client
 
 COPY package*.json ./app/
 
