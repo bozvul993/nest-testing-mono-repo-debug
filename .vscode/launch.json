@@ -7,9 +7,39 @@
 		{
 			"type": "node",
 			"request": "attach",
-            "name": "Attach to App1",
+            "name": "Debug App1",
             "address": "0.0.0.0",
             "port": 9231,
+            "localRoot": "${workspaceFolder}/mono-repo",
+            "remoteRoot": "/app/mono-repo",
+            "trace": true,
+            "restart": true,
+            "sourceMaps": true,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+		},
+        {
+			"type": "node",
+			"request": "attach",
+            "name": "Debug App2",
+            "address": "0.0.0.0",
+            "port": 9232,
+            "localRoot": "${workspaceFolder}/mono-repo",
+            "remoteRoot": "/app/mono-repo",
+            "trace": true,
+            "restart": true,
+            "sourceMaps": true,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+		},
+        {
+			"type": "node",
+			"request": "attach",
+            "name": "Debug App3",
+            "address": "0.0.0.0",
+            "port": 9233,
             "localRoot": "${workspaceFolder}/mono-repo",
             "remoteRoot": "/app/mono-repo",
             "trace": true,
