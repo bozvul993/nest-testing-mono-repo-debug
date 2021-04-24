@@ -8,6 +8,7 @@ services:
     image: mono-repo/app1:dev
     ports:
       - 3001:3001
+      - 9231:9229
     command: 'npm run start:service app1'
     networks:
       - mono-repo-net
@@ -22,6 +23,7 @@ services:
     image: mono-repo/app2:dev
     ports:
       - 3002:3002
+      - 9232:9229 
     command:  'npm run start:service app2'
     networks:
       - mono-repo-net
@@ -36,6 +38,7 @@ services:
     image: mono-repo/app3:dev
     ports:
       - 3003:3003
+      - 9233:9229 
     command:  'npm run start:service app3'
     networks:
       - mono-repo-net
